@@ -1,0 +1,66 @@
+{% load static %}
+<head>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/estilos2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% endblock css %}
+</head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="titular">
+          <h1>Tienda para mascotas</h1>
+          <h2>a luka y a mil</h2>
+        </div>
+        <div class="portada">
+          <img src="{% static 'images/perros.jpg' %}" alt="perros">
+        </div>
+        <div class="navegacion">
+          <ul>
+            <li class="nav-item">
+              <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'quienes_somos' %}">Quiénes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'donde_encontrarnos' %}">Dónde encontrarnos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'nuestros_clientes' %}">Nuestros clientes</a>
+            </li>
+            <li class="nav-item">
+              <div class="btn-group">
+                <a href="http://localhost:8000/add_mensaje" class="btn btn-primary">Contactanos</a>
+                <a href="http://localhost:8000/list_mensajes/" class="btn btn-primary">Tus mensajes</a>
+              </div>
+              {% comment %} <a class="nav-link" href="{% url 'add_mensaje' %}">Contactanos</a> {% endcomment %}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="contenido">
+        <div class="info">
+          <ul>
+            <li>
+              Inscríbete en nuestro boletín y entérate de las noticias y
+              descuentos nuestra tienda.
+            </li>
+            <li>
+              Escríbenos a contacto@tiendamascota.cl o a nuestro whastapp: +569
+              77777777
+            </li>
+            <li>
+              Si necesitas saber el estado de tu envío, envíanos un whatsapp a
+              +569 999999999
+            </li>
+            <li>Alonso de Córdova 150, oficina 724, Las Condes.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">
+        <footer>Todos los derechos reservados.</footer>
+      </div>
+    </div>
+</body>
+

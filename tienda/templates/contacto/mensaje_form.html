@@ -1,0 +1,18 @@
+{% extends 'base2.html' %} 
+ 
+{% block titulo_principal %} CRUD: Insert {% endblock %}
+ 
+{% block content %}
+    </div>
+    <div class="content container">
+        <form method="POST">
+            {% csrf_token %} {{ form }}
+            <button type="submit" class="btn btn-primary">Grabar</button>
+        </form>
+    </div>
+ 
+{% endblock %}
+
+{% block footer %} 
+<div class="footer"><footer>Todos los derechos reservados.</footer></div>
+{% endblock %}

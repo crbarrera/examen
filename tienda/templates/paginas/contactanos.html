@@ -1,0 +1,49 @@
+{% load static %}
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/estilos2.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="titular">
+        <h1>Tienda para mascotas</h1>
+        <h2>a luka y a mil</h2>
+      </div>
+      <div class="portada">
+        <img src="{% static 'images/perros.jpg' %}" alt="perros">
+      </div>
+      <div class="navegacion">
+        <ul>
+          <li class="nav-item"><a href="{% url 'index' %}">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'quienes_somos' %}">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'donde_encontrarnos' %}">Dónde encontrarnos</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'nuestros_clientes' %}">Nuestros clientes</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'add_mensaje' %}">Contactanos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="contenido">
+      <div class="row">            
+        <div class="col-md-12" style="padding-top:30px;">
+          <form id="contact-form">
+              <div class="form-group"><input type="text" name="nombre" id="nombre" class="form-control required" placeholder="Nombre"></div>
+              <div class="form-group"><input type="email" name="email" id="email" class="form-control required" placeholder="Email"></div>
+              <div class="form-group"><textarea name="mensaje" id="mensaje" class="form-control required" placeholder="Escribe un mensaje" rows="7"></textarea></div>
+            <button id="submit-form">Enviar</button>
+          </form>
+        </div>      
+      </div>
+    </div>
+  </div>
+  {% block javascript %}
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+  <script src="../js/form_validate.js"></script>
+  {% endblock javascript %}
+</body>

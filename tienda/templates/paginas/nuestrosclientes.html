@@ -1,0 +1,64 @@
+{% load static %}
+
+<head>
+    {% block css %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estiloObtenerdatos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos2.css' %}">
+    {% endblock css %}
+    {% block javascript %}
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    {% endblock javascript %}
+    <title>Nuestros clientes </title>
+</head>
+
+<body>
+    <div class="container" style="text-align: center;">
+      <div class="header">
+        <div class="titular">
+          <h1>Tienda para mascotas</h1>
+          <h2>a luka y a mil</h2>
+        </div>
+        <div class="portada">
+          <img src="{% static 'images/perros.jpg' %}" alt="perros">
+        </div>
+        <div class="navegacion">
+          <ul>
+            <li class="nav-item">
+              <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'quienes_somos' %}">Quiénes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'donde_encontrarnos' %}">Dónde encontrarnos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'nuestros_clientes' %}">Nuestros clientes</a>
+            </li>
+            <li class="nav-item">
+              <div class="btn-group">
+                <a href="http://localhost:8000/add_mensaje" class="btn btn-primary">Contactanos</a>
+                <a href="http://localhost:8000/list_mensajes/" class="btn btn-primary">Tus mensajes</a>
+              </div>
+              {% comment %} <a class="nav-link" href="{% url 'add_mensaje' %}">Contactanos</a> {% endcomment %}
+            </li>
+          </ul>
+        </div>
+      </div>  
+      <div class="contenido">
+        <button class="btn btn-primary" id="boton-usuarios">Click para ver clientes</button>
+        <div id="info" class="text-center">
+          <div id="lista-usuarios"></div>
+        </div>
+      </div>
+    </div>
+
+    {% block scripts %} <script src="/static/scripts.js"></script>{% endblock %}
+</body>

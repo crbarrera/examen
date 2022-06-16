@@ -1,0 +1,41 @@
+.container {
+  background-color: rgb(11, 153, 242);
+  justify-content: space-around;
+}
+
+.header {
+  background-color: lightskyblue;
+  justify-content: space-around;
+}
+
+.portada img {
+  text-align: center;
+  justify-content: right;
+  margin: 10px auto;
+  display: block;
+  width: 900px;
+  height: 200px;
+}
+
+.titular {
+  text-align: center;
+}
+
+.navegacion {
+  text-align: center;
+}
+
+.navegacion ul li {
+  padding: 10px;
+  list-style: none;
+  display: inline-block;
+}
+
+#lista-usuarios {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+p { line-height: 0; }
+

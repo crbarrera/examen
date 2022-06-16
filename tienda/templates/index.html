@@ -1,0 +1,84 @@
+{% load static %}
+<head>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/estilos2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% endblock css %}
+</head>
+<body>
+  <div class="container">
+    <div class="col-md-12 col-lg-12">
+      <div class="header">
+        <div class="titular">
+          <h1>Tienda para mascotas</h1>
+          <h2>a luka y a mil</h2>
+        </div>
+        <div class="portada">
+          <img src="{% static 'images/perros.jpg' %}" alt="perros">
+        </div>
+        <div class="navegacion">
+          <ul>
+            <li class="nav-item">
+              <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'quienes_somos' %}">Quiénes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'donde_encontrarnos' %}">Dónde encontrarnos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'nuestros_clientes' %}">Nuestros clientes</a>
+            </li>
+            <li class="nav-item">
+              <div class="btn-group">
+                <a href="http://localhost:8000/add_mensaje" class="btn btn-primary">Contactanos</a>
+                <a href="http://localhost:8000/list_mensajes/" class="btn btn-primary">Tus mensajes</a>
+              </div>
+              {% comment %} <a class="nav-link" href="{% url 'add_mensaje' %}">Contactanos</a> {% endcomment %}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="contenido">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <aside class="perro_izquierda">
+              <h1>Cama</h1>
+              <p>
+                La cama perfecta para que tu mascota descanse y se relaje con
+                su suave tela.
+              </p>
+              <img src="{% static 'images/cama.webp' %}" alt="cama">
+            </aside>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <aside class="perro_centro">
+              <h1>Correa</h1>
+              <p>
+                Correa para perros fabricada en poliéster teteron suave y
+                duradero.
+              </p>
+              <img src="{% static 'images/correa.webp' %}" alt="correa">
+            </aside>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-4">
+            <aside class="perro_derecha">
+              <h1>Juguete</h1>
+              <p>
+                El utilizar juguetes dentales ayuda mucho a la protección de
+                la limpieza de los dientes de tu mascota, junto con sus
+                encías.
+              </p>
+              <img src="{% static 'images/juguete.webp' %}" alt="juguete">
+            </aside>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <footer>Todos los derechos reservados.</footer>
+      </div>
+    </div>
+  </div>
+</body>
+
