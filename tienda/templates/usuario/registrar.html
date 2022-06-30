@@ -1,0 +1,15 @@
+{% extends 'usuario/base/base.html' %} 
+ 
+{% block content %}
+    <h1>Registrate</h1>
+    
+    <div class="center">
+        <div id="div-padre">
+            <form method="POST">
+                {% csrf_token %} {{ form.as_p }}
+                <button type="submit">Grabar</button>
+            </form>
+        </div>
+    </div>
+ 
+{% endblock %}

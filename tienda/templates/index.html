@@ -6,7 +6,7 @@
     {% endblock css %}
 </head>
 <body>
-  <div class="container">
+  <div class="">
     <div class="col-md-12 col-lg-12">
       <div class="header">
         <div class="titular">
@@ -35,8 +35,15 @@
                 <a href="http://localhost:8000/add_mensaje" class="btn btn-primary">Contactanos</a>
                 <a href="http://localhost:8000/list_mensajes/" class="btn btn-primary">Tus mensajes</a>
               </div>
-              {% comment %} <a class="nav-link" href="{% url 'add_mensaje' %}">Contactanos</a> {% endcomment %}
             </li>
+            {% if not user.is_authenticated %}        
+              <li class="nav-item"><a href="{% url 'registrar' %}">Registrarse</a></li>
+              <li class="nav-item"><a href="{% url 'login' %}">Iniciar sesión</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+              <li class="nav-item"><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+              <span class="ml-md-5" style="color: blue;"><strong>Usuario: {{ user.get_username }}</strong></span>
+            {% endif %}                
           </ul>
         </div>
       </div>
@@ -76,7 +83,7 @@
         </div>
       </div>
       <div class="footer">
-        <footer>Todos los derechos reservados.</footer>
+        <footer></footer>
       </div>
     </div>
   </div>

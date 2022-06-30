@@ -6,7 +6,7 @@
     {% endblock css %}
 </head>
 <body>
-  <div class="container">
+  <div class="">
     <div class="col-md-12 col-lg-12">
       <div class="header">
         <div class="titular">
@@ -30,13 +30,18 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'nuestros_clientes' %}">Nuestros clientes</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contactanos' %}">Contactanos</a>
-            </li>
+            {% if not user.is_authenticated %}        
+              <li class="nav-item"><a href="{% url 'registrar' %}">Registrarse</a></li>
+              <li class="nav-item"><a href="{% url 'login' %}">Iniciar sesión</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+              <li class="nav-item"><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+              <span class="ml-md-5" style="color: blue;"><strong>Usuario: {{ user.get_username }}</strong></span>
+            {% endif %}   
           </ul>
         </div>
       </div>
-      <div class="footer"><footer>Todos los derechos reservados.</footer></div>
+      <div class="footer"><footer></footer></div>
     </div>
   </div>
 </body>

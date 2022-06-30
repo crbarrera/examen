@@ -17,6 +17,10 @@ from django import views
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import views as auth_views
+
+from Usuario.views import RegistroUsuario
  
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +32,9 @@ urlpatterns = [
     path('donde_encontrarnos/', TemplateView.as_view(template_name='paginas/dondeencontrarnos.html'), name='donde_encontrarnos'),
     path('nuestros_clientes', TemplateView.as_view(template_name='paginas/nuestrosclientes.html'), name='nuestros_clientes'),
     path('quienes_somos', TemplateView.as_view(template_name='paginas/quienessomos.html'), name='quienes_somos'),
+     # Login and Logout
+    path('login/', LoginView.as_view(redirect_authenticated_user=True,template_name='Usuario/login.html'), name='login'),
+    path('logout/', LogoutView.as_view(template_name='Usuario/logout.html'), name='logout'),
+    path('registrar', RegistroUsuario.as_view(), name="registrar"),
 ]
 
