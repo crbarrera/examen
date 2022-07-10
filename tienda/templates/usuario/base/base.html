@@ -28,13 +28,16 @@
               <a href="{% url 'index' %}">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'quienes_somos' %}">Quiénes Somos</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{% url 'donde_encontrarnos' %}">Dónde encontrarnos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'nuestros_clientes' %}">Nuestros clientes</a>
+            </li>
+            <li class="nav-item">
+              <div class="btn-group">
+                <a href="http://localhost:8000/add_comentario" class="btn btn-primary">Opinion</a>
+                <a href="http://localhost:8000/list_comentarios/" class="btn btn-primary">Tus opiniones</a>
+              </div>
             </li>
             <li class="nav-item">
               <div class="btn-group">

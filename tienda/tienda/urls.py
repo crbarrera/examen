@@ -25,6 +25,7 @@ from Usuario.views import RegistroUsuario
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('contacto.urls')),
+    path('', include('opinion.urls')),
     # path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # path('index/', TemplateView.as_view(template_name='index.html'), name='index'),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
